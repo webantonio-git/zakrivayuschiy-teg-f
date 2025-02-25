@@ -32,13 +32,15 @@
 }
 
 .header {
-  margin-top: 100px;
+  margin: 100px auto;
   align-content: center;
   justify-content: center;
   justify-self: center;
   font-family: var(--font-accent, sans-serif);
   text-transform: uppercase;
-  height: clamp(20.438rem, 24.5359rem + 3.849vw, 23rem);
+  padding-block-start: 130px;
+  padding-block-end: 129px;
+  gap: 25px;
   background-color: var(--background-color);
   border: 2px solid var(--accent-color);
 }
@@ -77,7 +79,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   padding-bottom: 25px;
   background-color: var(--background-color);
 }
@@ -86,7 +88,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  box-sizing: border-box;  
 }
 
 .card__image {
@@ -99,14 +101,16 @@
   border-bottom: 2px solid var(--accent-color);
 }
 
-.card__image img {
+.card__image .image-article {
   width: 100%;
-  height: 100%;
-  min-height: 696px;
-  min-width: 696px;
-  object-fit: cover;
+  height: 100%;  
   object-position: center;
   margin-block-end: 50px;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .filter-brightness {
@@ -162,9 +166,9 @@
 }
 
 .article-title {
+  display: block;
   margin-block-start: 50px;
-  margin: 0 auto;
-  width: 100%;
+  margin: 0;
   background-color: var(--background-color);
   padding-top: 5px;
   padding-left: 10px;
@@ -174,40 +178,29 @@
   line-height: 21.78px;
   font-family: var(--font-main);
   font-variation-settings: "wght" var(--font-main-bold);
+  text-align: left;
+  align-self: flex-start;  
 }
 
-.article-text {
-  margin: 0 auto;
+.article-text { 
   padding-top: 10px;
   padding-left: 25px;
   padding-right: 25px;
+  padding-bottom: 17px;
   font-size: 18px;
   line-height: 21px;
   font-variation-settings: "wght" var(--font-main-normal);
 }
 
-.my-article-text {
-  padding-top: 25px;
-  padding-left: 25px;
-}
-
-.card__icon-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  transition: outline 0.3s ease;
-}
-
 .card__icon-button:focus-visible {
-  outline: none;
+ border: 2px solid var(--accent-color);
 }
 
 .like__buttons {
   display: flex;
   justify-content: end;
   align-items: end;
-  padding-top: 25px;
+  padding-top: 5px;
   padding-right: 25px;
   gap: 8px;
 }
@@ -225,8 +218,11 @@
   line-height: 12.6px;
   color:var(--background-color);
   mix-blend-mode: difference;
-  transition: color 0.5s ease-in-out;
   z-index: 2;
+}
+
+.button-ok {
+  text-transform: uppercase;
 }
 
 .like-button {
@@ -239,6 +235,17 @@
   padding: 12px 36px;
   align-items: center;
   justify-content: center;
+  transition: color 0.5s ease-in-out;
+}
+
+.like-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
 }
 
 .like-button::after {
@@ -259,6 +266,23 @@
   transform: scaleX(1);
 }
 
+.like-button:hover::before {
+  transform: scaleX(1);
+}
+
+.like-button:hover {
+  color: var(--background-color);
+}
+
+.like-button svg {
+  position: relative;
+  z-index: 2;
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
+
 .card__like-button:focus {
   outline: none;
 }
@@ -270,7 +294,11 @@
 .sparks {
   opacity: 0;
 }
+
 .card__icon-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
   background-color: transparent;
   cursor: pointer;
   border: 2px solid transparent;
@@ -328,7 +356,7 @@
   z-index: 2;
   color: var(--accent-color);
   fill: var(--accent-color);
-  transition: color 0.5s ease-in-out, fill 0.5s ease-in-out;
+
 }
 
 .card__like-button:hover .save-to-memory,
@@ -398,33 +426,21 @@
 
 @media (width<376px) {
   .header {
-    max-width: 375px;
-    height: clamp(20.438rem, 2.5359rem + 3.849vw, 2rem);
+    padding-block-start: 125px;
+    padding-block-end: 115px;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    gap:10px;
+    
+  }
+
+  .header-width {
+    width: clamp(3.38rem, 25.2859rem + 30.5157vw, 23.4rem);
   }
 
   .card__image {
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-    max-height: 375px;
-    margin-bottom: 20px;
-    position: relative;
-    border-top: 2px solid var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
-  }
-
-
-
-  .card__image img {
-    max-width: 371px;
-    min-width: 371px;
-    min-height: 371px;
-    max-height: 371px;
-    object-fit: cover;
-    object-position: center;
-    margin-block-end: 0px;
-  }
-
-
+      max-height: 375px;
+   }
 
   .article-text {
     margin: 0 auto;
@@ -436,12 +452,6 @@
     font-variation-settings: "wght" var(--font-main-normal);
   }
 
-  .my-article-text {
-    padding-top: 25px;
-    padding-left: 25px;
-    padding-right: 30px;
-  }
-
   .footer {
     padding: 0;
     padding-top: 0px;
@@ -449,27 +459,20 @@
     padding-left: 0px;
     display: flex;
     flex-direction: row;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
   }
 
-  .footer-text {
-    margin: 0 auto;
-    min-width: 305px;
+  .footer-text {     
     display: flex;
     flex-direction: column;
     margin-top: 50px;
     gap: 0px;
-    margin: 0px auto;
     padding-top: 5px;
     padding-right: 0px;
     padding-bottom: 14px;
     align-items: center;
   }
 
-  .save-to-memory {
-    display: block;
+  .save-to-memory { 
     padding-right: 5px;
     padding-top:0px;
   }
@@ -481,22 +484,7 @@
     min-height: 49px;
   }
 
-  .dialog {
-    width: clamp(21.313rem, 20.9609rem + 1.5023vw, 22.313rem);
-    padding: 30px;
-  }
-
-  .dialog[open] {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .save-modal .icon {
-    display: flex;
-    align-items: center;
-    gap: 0px;
+  .save-modal .icon {   
     min-block-size: 80px;
     min-inline-size: 80px;
   }
