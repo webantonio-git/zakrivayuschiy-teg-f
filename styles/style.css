@@ -371,9 +371,7 @@
 
 .dialog {
   width: clamp(21.313rem, 20.9609rem + 1.5023vw, 22.313rem);
-  padding: 30px;
-
-  
+  padding: 30px;  
 }
 
 .dialog[open] {
