@@ -213,7 +213,9 @@
 .card__like-button {
   position: relative;
   z-index: 10;
-  min-width: 130px;
+  max-width: 130px;
+  text-align: center;
+  width: 130px;
 }
 
 .button__text {
@@ -222,8 +224,7 @@
   font-size: 14px;
   line-height: 12.6px;
   color: var(--background-color);
-  mix-blend-mode: difference;
-  z-index: 2;
+  mix-blend-mode: difference;  
 }
 
 .button-ok {
