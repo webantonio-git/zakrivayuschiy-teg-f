@@ -333,9 +333,9 @@
   align-items: center;
   justify-content: center;
   justify-items: center;
-  gap: 10px;
+  gap: 5px;
   padding-top: 15px;
-  padding-left: 5px;
+  padding-left: 10px;
   padding-right: 15px;
   padding-bottom: 15px;
 
@@ -465,8 +465,8 @@
   }
 
   .icon {
-    padding-right: 14px;
-    padding-left: 7px;
+    padding-right: 12px;
+    padding-left: 8px;
     min-width: 49px;
     min-height: 49px;
   }
