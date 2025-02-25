@@ -295,16 +295,14 @@
   opacity: 0;
 }
 
-.card__icon-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
+.card__icon-button { 
+  outline: none; 
   background-color: transparent;
   cursor: pointer;
   border: 2px solid transparent;
   padding: 0;
   block-size: 39px;
-  transition: border 0.3s ease;
+  transition: border 0.5s ease;
 }
 
 .card__icon-button:focus {
