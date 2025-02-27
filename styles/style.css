@@ -442,17 +442,14 @@
   }
 
   .footer {
-    padding: 0;
-    padding-top: 0px;
-    padding-right: 25px;
-    padding-left: 0px;   
+    padding: 0;    
+    padding-right: 25px;    
     flex-direction: row;
   }
 
   .footer-text {
     min-width: 310px; 
-    flex-direction: column;
-    margin-top: 0px;
+    flex-direction: column;    
     gap: 0px;
     padding-top: 5px;
     padding-left: 0px;
