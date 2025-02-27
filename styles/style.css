@@ -92,7 +92,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 .card__image {
