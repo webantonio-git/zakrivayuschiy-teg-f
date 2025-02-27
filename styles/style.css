@@ -10,11 +10,6 @@
 
 */
 
-*{
-  box-sizing: border-box; 
-}
-
-
 .page {
   width: 100%;
   min-inline-size: 320px;
@@ -447,7 +442,6 @@
   }
 
   .footer {
-    min-width: 300px;
     padding: 0;
     padding-top: 0px;
     padding-right: 25px;
